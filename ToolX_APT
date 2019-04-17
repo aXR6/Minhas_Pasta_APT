@@ -29,16 +29,11 @@ unzip()
 	echo "Instalar minha pasta APT"
 	mkdir /home/backupAPT
 	cp -R /etc/apt/* /home/backupAPT/
-
 	apt update
 	apt install zip
-
 	unzip apt.zip
-
 	rm -r /etc/apt/*
-
 	cp -R apt/* /etc/apt/
-
 	apt update
 }
 
