@@ -41,7 +41,7 @@ voltar()
 {
 	echo "Voltar sua pasta APT (/home/backupAPT/)"
 	rm -r /etc/apt/*
-	cp -R /home/backupAPT/*
+	cp -R /home/backupAPT/* /etc/apt/
 	apt update
 }
 
