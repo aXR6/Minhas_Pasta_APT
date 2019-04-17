@@ -1,0 +1,81 @@
+#!/bin/bash
+PS3="ToolX_APT>"
+
+##ToolX_APT##
+##################
+##START ToolX_APT##
+ToolX_APT()
+{
+ToolX_APT=("Instalar minha pasta APT" "Voltar sua pasta APT (/home/backupAPT/)" "Cair fora")
+select opt in "${ToolX_APT[@]}"; do
+  if [ "$opt" = "Cair fora" ]; then
+  echo "Saindo... Obrigado por utilizar o Script ToolX_APT!" && sleep 1 && clear
+  exit 0
+  	elif [ "$opt" = "Instalar minha pasta APT" ]; then
+	    unzip
+    elif [ "$opt" = "Voltar sua pasta APT (/home/backupAPT/)" ]; then
+    	voltar
+  else
+  echo "Opção inválida!"
+  fi
+done
+}
+##END ToolX_APT##
+################
+##/ToolX_APT##
+
+unzip()
+{
+	echo "Instalar minha pasta APT"
+	mkdir /home/backupAPT
+	cp -R /etc/apt/* /home/backupAPT/
+
+	apt update
+	apt install zip
+
+	unzip apt.zip
+
+	rm -r /etc/apt/*
+
+	cp -R apt/* /etc/apt/
+
+	apt update
+}
+
+voltar()
+{
+	echo "Voltar sua pasta APT (/home/backupAPT/)"
+	rm -r /etc/apt/*
+	cp -R /home/backupAPT/*
+	apt update
+}
+
+##Bem Vindo##
+#########################
+##Inicio Bem Vindo##
+clear && echo ""
+echo "'########::'#######:::'#######::'##:::::::'##::::'##:::::::::::::::::::'###::::'##::::'##:'########:::'#######::"
+echo "... ##..::'##.... ##:'##.... ##: ##:::::::. ##::'##:::::::::::::::::::'## ##:::. ##::'##:: ##.... ##:'##.... ##:"
+echo "::: ##:::: ##:::: ##: ##:::: ##: ##::::::::. ##'##:::::::::::::::::::'##:. ##:::. ##'##::: ##:::: ##: ##::::..::"
+echo "::: ##:::: ##:::: ##: ##:::: ##: ##:::::::::. ###:::::::'#######::::'##:::. ##:::. ###:::: ########:: ########::"
+echo "::: ##:::: ##:::: ##: ##:::: ##: ##::::::::: ## ##::::::........:::: #########::: ## ##::: ##.. ##::: ##.... ##:"
+echo "::: ##:::: ##:::: ##: ##:::: ##: ##:::::::: ##:. ##::::::::::::::::: ##.... ##:: ##:. ##:: ##::. ##:: ##:::: ##:"
+echo "::: ##::::. #######::. #######:: ########: ##:::. ##:::::::::::::::: ##:::: ##: ##:::. ##: ##:::. ##:. #######::"
+echo ":::..::::::.......::::.......:::........::..:::::..:::::::::::::::::..:::::..::..:::::..::..:::::..:::.......:::"
+echo ""
+echo -e "\033[1;32mSeja bem vindo ao ToolX_APT!\033[0m"
+echo -e "\033[1;32mLinkedin:\033[0m https://www.linkedin.com/in/thalles-canela/"
+echo -e "\033[1;32mYouTube: \033[0m https://www.youtube.com/c/aXR6CyberSecurity"
+echo -e "\033[1;32mFacebook:\033[0m https://www.facebook.com/axr6PenTest"
+echo -e "\033[1;32mGithub:  \033[0m https://github.com/ThallesCanela"
+echo -e "\033[1;32mGithub:  \033[0m https://github.com/aXR6"
+echo -e "\033[1;32mTwitter: \033[0m https://twitter.com/Axr6S"
+echo -e "\033[1;32mPadim:   \033[0m https://www.padrim.com.br/aXR6CyberSecurity"
+echo -e "\033[1;31m:=> Não seja sujo! Se achou de graça, distribua de graça repassando os devidos créditos! \033[0m"
+echo -e "\033[1;31m:=> Funcional no: Linux toolx 4.19.0-kali1-amd64 #1 SMP Debian 4.19.13-1kali1 (2019-01-03) x86_64 GNU/Linux \033[0m"
+echo -e "\033[1;31m:=> Usuário ROOT necessário!! \033[0m"
+echo ""
+ToolX_APT
+##Fim Bem Vindo##
+#######################
+##/Bem Vindo##
