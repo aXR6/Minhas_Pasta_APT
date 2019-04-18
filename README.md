@@ -14,6 +14,8 @@ Recomendo o uso para distribuições Debian 9 e suas versões.
 
 # Basta apenas clonar o repositório, dar permissão e executar o script.
 ```
+git clone https://github.com/aXR6/Minhas_Pasta_APT
+cd Minhas_Pasta_APT/
 chmod 777 ToolX_APT
 ./ToolX_APT
 ```
