@@ -34,6 +34,8 @@ unzip()
 	unzip apt.zip
 	rm -r /etc/apt/*
 	cp -R apt/* /etc/apt/
+	wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add
+	sudo apt install kali-archive-keyring
 	apt update
 }
 
